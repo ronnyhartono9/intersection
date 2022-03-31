@@ -91,15 +91,29 @@
                 prevRatio = entry.intersectionRatio;
             });
         } 
+
+        var p;
+        const divs = ["r1", "r2", "", " ", " "];
+
+
         function ketarik(){
             var rr = document.getElementById('r').innerHTML.replace("kotak 1 ratio =   ", "");
             var ss = document.getElementById('s').innerHTML.replace("kotak 2 ratio =   ", "");
-            //alert(rr+ss);
+       
             if(rr > ss ){
                 alert( "ketarik ke kotak 1");
+                p="r1"; 
             }else{
                 alert( "ketarik ke kotak 2");
+                p="r2"; 
             }
+        }
+
+        function test(){
+             ketarik();  
+             document.getElementById('hope').style.left =  document.getElementById('thope').rows[0].cells[1].offsetWidth *  divs.indexOf(p)     +"px";
+             document.getElementById('hope').scrollIntoView();
+  
         }
     </script>
  </head>
@@ -111,22 +125,29 @@
      <a> prev</a> 
      <a> next</a>
      <a onclick="ketarik()"> magnet </a>
-     <div id="awak" style=" overflow: scroll; background-color: beige; width: 100%; height: 80%;"> 
-        <div id="panel" style=" background-color: white;  width: 200%; height: 100%;">
-            <table border="1" style="width: 100%;">                
+     <br> 
+     <a onclick="test()">tombol</a>
+     <div id="awak" style=" overflow: scroll;  scroll-behavior: smooth; background-color: beige; width: 100%; height: 80%;"> 
+        <div id="panel" style=" background-color: pink;  width: 200%; height: 100%;">
+            <table id="thope" border="1" style="width: 100%;">                
                 <tr>
                     <td align="center">
-                        <div id="g" style="background-color: green; width: 450px;height: 400;">
+                        <div id="r1" style=" position: relative;    background-color: yellow;">1
+                            <div id="g" style=" position: relative; background-color: green; width: 450px;height: 400;">
 
+                            </div>
                         </div>
+                       
                     </td>
                     <td align="center">
-
-                        <div id="h" style="background-color: blue; width: 450px;height: 400;"> 
-                        </div> 
+                        <div id="r2" style=" position: relative;  background-color: orange;">2
+                            <div id="h" style=" position: relative; background-color: blue; width: 450px;height: 400;"> 
+                            </div> 
+                        </div>
+                        
 
                     </td> 
-                    <td align="center">
+                    <td align="center">3
                         <div id="i" style="background-color: blue; width: 450px;height: 400;">
 
                         </div>                         
@@ -134,7 +155,12 @@
 
                 </tr>
             </table>
+
+           
         </div>
+                    <div id="hope" style=" position: relative;  background-color: purple; width: 100%;">
+                        dd
+                </div>
      </div>
         <script>
             var i=0;
