@@ -5,20 +5,27 @@
     <script type="text/javascript">
         const numSteps = 20.0;
 
-        let boxElement;let gel;
+        let boxElement;let gel; let ix;let jx; let kx;
         let prevRatio = 0.0;
         let increasingColor = "rgba(40, 40, 190, ratio)";
         let decreasingColor = "rgba(190, 40, 40, ratio)";
 
         // Set things up
         window.addEventListener("load", (event) => {
-        boxElement = document.querySelector("#h"); 
-        gel = document.querySelector("#g"); 
+            boxElement = document.querySelector("#h"); 
+            gel = document.querySelector("#g");
+
+            ix = document.querySelector("#ii");
+            jx = document.querySelector("#jj");
+            kx = document.querySelector("#kk");
+
+
         createObserver();
         }, false);
 
         function createObserver() {
             let observer; let gobserver;
+                let ixerver;let jxerver;let kxerver;
 
             let options = {
                 root: null,
@@ -29,14 +36,39 @@
             let options2 = {
                 root: null,
                 rootMargin: "0px",
-                threshold: buildThresholdList2()
+                threshold: buildThresholdList()
             };
+
+                    let options3 = {
+                        root: null,
+                        rootMargin: "0px",
+                        threshold: buildThresholdList()
+                    };
+                    let options4 = {
+                        root: null,
+                        rootMargin: "0px",
+                        threshold: buildThresholdList()
+                    };
+                    let options5 = {
+                        root: null,
+                        rootMargin: "0px",
+                        threshold: buildThresholdList()
+                    };
 
             observer = new IntersectionObserver(handleIntersect, options);
             observer.observe(boxElement);
 
             gobserver = new IntersectionObserver(handleIntersect2, options2);
             gobserver.observe(gel);
+
+                    // ixerver = new IntersectionObserver(handleIntersect3, options3);
+                    // ixerver.observe(ix);
+
+                    // jxerver = new IntersectionObserver(handleIntersect4, options4);
+                    // jxerver.observe(jx);
+
+                    // kxerver = new IntersectionObserver(handleIntersect5, options5);
+                    // kxerver.observe(kx);
 
         }
 
@@ -54,8 +86,7 @@
         }
 
         function handleIntersect(entries, observer) {
-            entries.forEach((entry) => {
-            
+            entries.forEach((entry) => {            
                 if (entry.intersectionRatio > prevRatio) {
                 entry.target.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio); 
                 } else {
@@ -64,19 +95,6 @@
                     document.getElementById("s").innerHTML ="kotak 2 ratio =   "+entry.intersectionRatio;
                 prevRatio = entry.intersectionRatio;
             });
-        }
-
-        function buildThresholdList2() {
-            let thresholds = [];
-            let numSteps = 20;
-
-            for (let i=1.0; i<=numSteps; i++) {
-                let ratio = i/numSteps;
-                thresholds.push(ratio);
-            }
-
-            thresholds.push(0);
-            return thresholds;
         }
 
         function handleIntersect2(entries, observer) {
@@ -91,6 +109,21 @@
                 prevRatio = entry.intersectionRatio;
             });
         } 
+
+        // function buildThresholdList2() {
+        //     let thresholds = [];
+        //     let numSteps = 20;
+
+        //     for (let i=1.0; i<=numSteps; i++) {
+        //         let ratio = i/numSteps;
+        //         thresholds.push(ratio);
+        //     }
+
+        //     thresholds.push(0);
+        //     return thresholds;
+        // }
+
+
 
         var p;
         const divs = ["r1", "r2", "", " ", " "];
@@ -127,29 +160,48 @@
      <a onclick="ketarik()"> magnet </a>
      <br> 
      <a onclick="test()">tombol</a>
-     <div id="awak" style=" overflow: scroll;  scroll-behavior: smooth; background-color: beige; width: 100%; height: 80%;"> 
+     <div id="awak" style="  overflow: scroll; scroll-behavior: smooth;   background-color: beige; width: 100%; height: 80%;"> 
         <div id="panel" style=" background-color: pink;  width: 200%; height: 100%;">
             <table id="thope" border="1" style="width: 100%;">                
                 <tr>
                     <td align="center">
-                        <div id="r1" style=" position: relative;    background-color: yellow;">1
+                        <div id="r1" style=" position: relative;">
                             <div id="g" style=" position: relative; background-color: green; width: 450px;height: 400;">
-
+                                1
                             </div>
                         </div>
                        
                     </td>
                     <td align="center">
-                        <div id="r2" style=" position: relative;  background-color: orange;">2
+                        <div id="r2" style=" position: relative;">
                             <div id="h" style=" position: relative; background-color: blue; width: 450px;height: 400;"> 
-                            </div> 
+                                2
+                            </div>  
                         </div>
                         
 
-                    </td> 
-                    <td align="center">3
-                        <div id="i" style="background-color: blue; width: 450px;height: 400;">
+                    </td>
+                    <td align="center">
+                        <div id="r3" style="  width: 450px;height: 400;">
+                            <div id="ii" style=" position: relative; background-color: blue; width: 450px;height: 400;"> 
+                                3
+                            </div>  
+                        </div>                         
+                    </td>
 
+                    <td align="center">
+                        <div id="r4" style=" width: 450px;height: 400;">
+                            <div id="jj" style=" position: relative; background-color: blue; width: 450px;height: 400;"> 
+                                4
+                            </div>  
+                        </div>                         
+                    </td>
+
+                    <td align="center">
+                        <div id="r5" style="  width: 450px;height: 400;">
+                            <div id="kk" style=" position: relative; background-color: blue; width: 450px;height: 400;"> 
+                                5
+                            </div>  
                         </div>                         
                     </td>
 
