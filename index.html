@@ -89,55 +89,35 @@
 
         function handleIntersect(entries, observer) {
             entries.forEach((entry) => {
-                if (entry.intersectionRatio > prevRatio) {
-                entry.target.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio); 
-                } else {
-                entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
-                }  ratios[0] = entry.intersectionRatio;
+                ratios[0] = entry.intersectionRatio;
                 prevRatio = entry.intersectionRatio;
             });
         }
 
         function handleIntersect2(entries, observer) {
-            entries.forEach((entry) => {
-                if (entry.intersectionRatio > prevRatio) {
-                entry.target.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio); 
-                } else {
-                entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
-                } ratios[1] = entry.intersectionRatio;
+            entries.forEach((entry) => {                 
+                ratios[1] = entry.intersectionRatio;
                 prevRatio = entry.intersectionRatio;
             });
         }
 
         function handleIntersect3(entries, observer) {
             entries.forEach((entry) => {            
-                if (entry.intersectionRatio > prevRatio) {
-                entry.target.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio); 
-                } else {
-                entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
-                } ratios[2] = entry.intersectionRatio;
+                ratios[2] = entry.intersectionRatio;
                 prevRatio = entry.intersectionRatio;
             });
         } 
 
         function handleIntersect4(entries, observer) {
             entries.forEach((entry) => {
-                if (entry.intersectionRatio > prevRatio) {
-                entry.target.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio); 
-                } else {
-                entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
-                } ratios[3] = entry.intersectionRatio;
+                ratios[3] = entry.intersectionRatio;
                 prevRatio = entry.intersectionRatio;
             });
         }
 
         function handleIntersect5(entries, observer) {
             entries.forEach((entry) => {
-                if (entry.intersectionRatio > prevRatio) {
-                entry.target.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio); 
-                } else {
-                entry.target.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
-                } ratios[4] = entry.intersectionRatio;
+                ratios[4] = entry.intersectionRatio;
                 prevRatio = entry.intersectionRatio;
             });
         }  
@@ -145,7 +125,7 @@
         var p;
         const divs = ["r1", "r2", "", " ", " "];        
         const kotaks = ["g", "h", "ii", "jj", "kk"];
-        function ketarik(){
+        function ketarik(){ 
              document.getElementById('hope').style.left =  document.getElementById('thope').rows[0].cells[1].offsetWidth *  ratios.indexOf( Math.max(...ratios) ) +"px";
              document.getElementById('hope').scrollIntoView();
         }
@@ -157,34 +137,34 @@
             <table id="thope" style="width: 100%;">
                 <tr>
                     <td align="center">
-                        <div id="g" style=" position: relative; background-color: green; width: 400px;height: 400;">
+                        <div id="g" style=" border: 2px solid gold; position: relative; border-radius: 5px; width: 400px;height: 400;">
                             1
                         </div>
                     </td>
                     <td align="center">                        
-                        <div id="h" style=" position: relative; background-color: blue; width: 400px;height: 400;">
+                        <div id="h" style=" border: 2px solid gold;position: relative; border-radius: 5px;  width: 400px;height: 400;">
                             2
                         </div>
                     </td>
                     <td align="center">
-                        <div id="ii" style=" position: relative; background-color: blue; width: 400px;height: 400;">
+                        <div id="ii" style=" border: 2px solid gold;position: relative; border-radius: 5px;  width: 400px;height: 400;">
                             3
                         </div>
                     </td>
                     <td align="center">                         
-                        <div id="jj" style=" position: relative; background-color: blue; width: 400px;height: 400;">
+                        <div id="jj" style=" border: 2px solid gold;position: relative; border-radius: 5px;  width: 400px;height: 400;">
                             4
                         </div>
                     </td>
 
                     <td align="center">                       
-                        <div id="kk" style=" position: relative; background-color: blue; width: 400px;height: 400;">
+                        <div id="kk" style=" border: 2px solid gold;border-radius: 5px; position: relative;  width: 400px;height: 400;">
                             5
                         </div>
                     </td>
                     <td align="center">                       
-                        <div style=" position: relative; background-color: white; width: 400px;height: 400;">
-                            6
+                        <div style=" border: 2px solid gold;position: relative; background-color: white; width: 400px;height: 400;">
+                            
                         </div>                                          
                     </td>
                 </tr>
@@ -207,10 +187,12 @@
                 i++;
                 if(timer !== null) {  clearTimeout(timer); }
                 timer = setTimeout(function() { 
-                        if( poscawal > 0 ){
-                        //alert(" sc awal "+ poscawal +" sc akhir"+elemst.scrollLeft); 
+                        // if( poscawal > 0 ){
+                        // alert(" sc awal "+ poscawal +" sc akhir"+elemst.scrollLeft); 
+                        
+                        // }
                         ketarik();
-                        }poscawal=0; 
+                        poscawal=0; 
                     i=0;
                 }, 250);
             }, false);
