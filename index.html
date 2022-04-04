@@ -1,8 +1,18 @@
 <html>
     <meta name="theme-color"content="chocolate"/>
-    <meta name="viewport"content="width=device-width,initial-scale=1"> 
+    <meta name="viewport"content="width=device-width,initial-scale=1">
+   
  <head>
-     <style>
+    <style>
+        #tangan{
+            position: relative;  left:-40px;
+            opacity: 0;
+            animation: maju 1.5s infinite;
+            animation-direction: alternate;
+        }
+        @keyframes maju { 
+         from{left:-40px;opacity: 0;} to {left:0px;opacity: 1;}
+        }
         .dot{
             height: 10px;
             width: 10px;
@@ -11,7 +21,14 @@
             display: inline-block;
             cursor: pointer;
         }
-     </style>
+        .bg2 {
+            background-image: url("back.jpg");
+            height: 90%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 90% 90%;
+        }
+    </style>
     <script type="text/javascript">
         const numSteps = 20.0;
         let boxElement;let gel; let ix;let jx; let kx;
@@ -138,32 +155,108 @@
                 <tr>
                     <td align="center">
                         <div id="g" style=" border: 2px solid gold; position: relative; border-radius: 5px; width: 400px;height: 400;">
-                            1
+                            <table style="width: 100%; height: 100%;">
+                                <tr style="height: 90%;">
+                                    <td class="bg2" style="background-image: url('skill 1.jpg');">
+                                       
+
+                                    </td>
+                                </tr>
+                                <tr style="height: 10%;">
+                                    <td align="center" onclick="blereg(1)" >
+                                        <img id="tangan" src="h.jpg" width="42.5" height="34" style="position: relative; top:6px" >
+                                        <strong>                                                         
+                                            HTML,JavaScript and CSS  
+                                        </strong> 
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </td>
                     <td align="center">                        
                         <div id="h" style=" border: 2px solid gold;position: relative; border-radius: 5px;  width: 400px;height: 400;">
-                            2
+                            <table style="width: 100%; height: 100%;">
+                                <tr style="height: 90%;">
+                                    <td class="bg2" style="background-image: url('skill 2.jpg');">
+                                       
+
+                                    </td>
+                                </tr>
+                                <tr style="height: 10%;">
+                                    <td align="center" onclick="blereg(1)" >
+                                        <img id="tangan" src="h.jpg" width="42.5" height="34" style="position: relative; top:6px" >
+                                        <strong>                                                         
+                                            HTML,JavaScript and CSS  
+                                        </strong> 
+                                    </td>
+                                </tr>
+                            </table>
+                            
                         </div>
                     </td>
                     <td align="center">
                         <div id="ii" style=" border: 2px solid gold;position: relative; border-radius: 5px;  width: 400px;height: 400;">
-                            3
+                            <table style="width: 100%; height: 100%;">
+                                <tr style="height: 90%;">
+                                    <td class="bg2" style="background-image: url('skill 3.jpg');">
+                                       
+
+                                    </td>
+                                </tr>
+                                <tr style="height: 10%;">
+                                    <td align="center" onclick="blereg(1)" >
+                                        <img id="tangan" src="h.jpg" width="42.5" height="34" style="position: relative; top:6px" >
+                                        <strong>                                                         
+                                            HTML,JavaScript and CSS  
+                                        </strong> 
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </td>
                     <td align="center">                         
                         <div id="jj" style=" border: 2px solid gold;position: relative; border-radius: 5px;  width: 400px;height: 400;">
-                            4
+                            <table style="width: 100%; height: 100%;">
+                                <tr style="height: 90%;">
+                                    <td class="bg2" style="background-image: url('skill 4.jpg');">
+                                       
+
+                                    </td>
+                                </tr>
+                                <tr style="height: 10%;">
+                                    <td align="center" onclick="blereg(1)" >
+                                        <img id="tangan" src="h.jpg" width="42.5" height="34" style="position: relative; top:6px" >
+                                        <strong>                                                         
+                                            HTML,JavaScript and CSS  
+                                        </strong> 
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </td>
 
                     <td align="center">                       
                         <div id="kk" style=" border: 2px solid gold;border-radius: 5px; position: relative;  width: 400px;height: 400;">
-                            5
+                            <table style="width: 100%; height: 100%;">
+                                <tr style="height: 90%;">
+                                    <td class="bg2" style="background-image: url('skill 5.jpg');">
+                                       
+
+                                    </td>
+                                </tr>
+                                <tr style="height: 10%;">
+                                    <td align="center" onclick="blereg(1)" >
+                                        <img id="tangan" src="h.jpg" width="42.5" height="34" style="position: relative; top:6px" >
+                                        <strong>                                                         
+                                            HTML,JavaScript and CSS  
+                                        </strong> 
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </td>
                     <td align="center">                       
-                        <div style=" border: 2px solid gold;position: relative; background-color: white; width: 400px;height: 400;">
+                        <div style=" position: relative; background-color: white; width: 400px;height: 400;">
                             
                         </div>                                          
                     </td>
@@ -186,11 +279,7 @@
             if(i==0){ poscawal = elemst.scrollLeft; }
                 i++;
                 if(timer !== null) {  clearTimeout(timer); }
-                timer = setTimeout(function() { 
-                        // if( poscawal > 0 ){
-                        // alert(" sc awal "+ poscawal +" sc akhir"+elemst.scrollLeft); 
-                        
-                        // }
+                timer = setTimeout(function() {  
                         ketarik();
                         poscawal=0; 
                     i=0;
